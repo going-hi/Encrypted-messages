@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Шифрованное сообщение">
+    {{> headFavicon}}
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>{{code}}</title>
+</head>
+
+<body>
+    {{> header}}
+
+    <div class="model" id="model">
+        <span>Пароль неверный</span>
+        <div class="model-cross">×</div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="content__inner">
+                <h1 class="content-headline code">{{code}}</h1>
+                <br>
+                <h2 class="content-headline">Переходов по ссылке: {{views}}</h2>
+
+            {{#if description}}
+                <div>
+                    <h2 class="content-description">Описание</h2>
+                    <div class="content-description-text">
+                        <p>
+                          {{description}}
+                        </p>
+                    </div>
+                </div>
+            {{/if}}
+                <div id="message" style="display: none;">
+                    <h2 class="content-description">Сообщение</h2>
+                    <div class="content-description-text">
+                        <p></p>
+                    </div>
+                </div>
+
+                <form id="password-form">
+                    <input type="hidden" name="code" value="{{code}}">
+                    <div id="passwordInput">
+                        <input class="content-textarea input"  maxlength="20"  name="password" required placeholder="Пароль">
+                        <button class="btn-red" type="submit">Получить сообщение</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

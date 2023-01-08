@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{> headFavicon}}
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Не найдено</title>
+</head>
+<body>
+   {{> header}}
+
+    <div class="content">
+        <div class="container">
+            <div class="content__inner">
+                <div class="content-headline code">Сообщение по коду {{code}} не найдено</div>
+                <br>
+                <br>
+                <br>
+                <button class="btn-red">
+                    <a href="/" >Перейти к созданию сообщения</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+</body>
+</html>
