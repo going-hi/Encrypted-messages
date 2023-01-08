@@ -2,8 +2,8 @@ import crypto, { createDiffieHellmanGroup } from 'crypto'
 import util from 'util'
 import { configService } from '../config/config.service'
 
-const KEY = configService.get('KEY')
-const ALGORITHM = configService.get('ALGORITHM')
+const KEY = process.env.KEY || configService.get('KEY')
+const ALGORITHM = process.env.ALGORITHM || configService.get('ALGORITHM')
 
 
 type encryptionObject  = {

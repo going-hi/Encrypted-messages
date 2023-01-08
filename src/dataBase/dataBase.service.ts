@@ -18,7 +18,7 @@ class DataBase {
 
         this.sourse = new DataSource({
             type: 'postgres',
-            url: DB_URL,
+            url: process.env.DB_URL || DB_URL,
             entities: [path.join(__dirname, '../entity/*{.js,.ts}')],
             synchronize: true
         })

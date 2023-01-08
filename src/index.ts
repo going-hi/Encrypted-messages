@@ -3,7 +3,7 @@ import { configService } from "./config/config.service";
 import { dataBase } from "./dataBase/dataBase.service";
 import { messageController } from './message/message.controller';
 
-const PORT = Number(configService.get('PORT'))
+const PORT =  Number(process.env.PORT || configService.get('PORT'))
 
 const app = new App(
     [
